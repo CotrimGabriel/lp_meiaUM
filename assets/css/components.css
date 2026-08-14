@@ -1,0 +1,241 @@
+/* ==========================================================================
+   Componentes reutilizáveis (padrão BEM: .bloco__elemento--modificador)
+   ========================================================================== */
+
+/* --- Ícones --------------------------------------------------------------- */
+
+.icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon--lg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon--filled {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* --- Botões --------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  min-height: 2.75rem; /* alvo de toque acessível (44px) */
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  border-radius: var(--radius-full);
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  background-color: var(--color-action-emerald);
+  color: var(--color-on-dark);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-action-emerald-dark);
+}
+
+.btn--outline {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-white);
+  color: var(--color-technical-black);
+}
+
+.btn--lg {
+  padding: var(--space-md) var(--space-lg);
+  min-height: 3.25rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  .btn--block {
+    width: auto;
+  }
+}
+
+/* --- Cartões -------------------------------------------------------------- */
+
+.card {
+  padding: var(--space-lg);
+  background-color: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.card--lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card--outline:hover {
+  border-color: var(--color-blueprint-blue);
+}
+
+.card--glass {
+  background-color: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(10px);
+}
+
+.card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--space-md);
+  background-color: var(--color-primary-fixed);
+  color: var(--color-blueprint-blue);
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+.card--lift:hover .card__icon {
+  background-color: var(--color-blueprint-blue);
+  color: var(--color-on-dark);
+}
+
+/* Ícone solto no topo do card (variação sem o selo .card__icon). */
+.card > .icon {
+  margin-bottom: var(--space-sm);
+}
+
+.card__title {
+  margin-bottom: var(--space-sm);
+  color: var(--color-technical-black);
+}
+
+.card__text {
+  color: var(--color-on-surface-variant);
+}
+
+/* --- Depoimentos ---------------------------------------------------------- */
+
+.testimonial__rating {
+  display: flex;
+  gap: 0.125rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-blueprint-blue);
+}
+
+.testimonial__quote {
+  margin-bottom: var(--space-md);
+  color: var(--color-on-surface-variant);
+  font-style: italic;
+}
+
+.testimonial__author {
+  color: var(--color-technical-black);
+}
+
+.testimonial__location {
+  margin-top: var(--space-xs);
+  color: var(--color-blueprint-blue);
+}
+
+/* --- Acordeão (FAQ) ------------------------------------------------------- */
+
+.accordion {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.accordion__item {
+  background-color: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  width: 100%;
+  color: var(--color-technical-black);
+  cursor: pointer;
+  list-style: none;
+  text-align: left;
+}
+
+/* Remove o marcador nativo do <summary> (Safari inclusive). */
+.accordion__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__icon {
+  color: var(--color-blueprint-blue);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.accordion__item[open] .accordion__icon {
+  transform: rotate(180deg);
+}
+
+.accordion__panel {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-on-surface-variant);
+}
+
+/* --- Animação de entrada (progressive enhancement) ------------------------ */
+
+/* Sem JS a classe .js nunca é adicionada e o conteúdo aparece normalmente. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

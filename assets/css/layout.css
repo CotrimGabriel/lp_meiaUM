@@ -1,0 +1,325 @@
+/* ==========================================================================
+   Layout — container, seções, grids, header e footer
+   ========================================================================== */
+
+/* --- Container ------------------------------------------------------------ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+/* --- Seções --------------------------------------------------------------- */
+
+.section {
+  padding-block: var(--space-2xl);
+}
+
+.section--tight {
+  padding-block: var(--space-xl);
+}
+
+.section--alt {
+  background-color: var(--color-surface-low);
+}
+
+.section--bordered {
+  border-top: 1px solid var(--color-border);
+}
+
+.section__header {
+  margin-bottom: var(--space-xl);
+}
+
+.section__header--center {
+  text-align: center;
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.section__title {
+  color: var(--color-technical-black);
+}
+
+.section__subtitle {
+  margin-top: var(--space-md);
+  color: var(--color-on-surface-variant);
+}
+
+/* --- Grids ---------------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/* Colunas explícitas por breakpoint: mantém o ritmo visual previsível
+   independentemente da quantidade de itens. */
+@media (min-width: 40em) {
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --- Header --------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background-color: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow var(--duration-base) var(--ease-out);
+}
+
+/* Classe aplicada por JS quando a página é rolada. */
+.site-header.is-scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  min-height: var(--header-height);
+  padding-block: var(--space-sm);
+}
+
+.site-header__brand {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-technical-black);
+}
+
+@media (min-width: 48em) {
+  .site-header__brand {
+    font-size: var(--text-headline-sm);
+  }
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* --- Navegação principal --------------------------------------------------- */
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.site-nav__link {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--color-on-surface-variant);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.site-nav__link:hover,
+.site-nav__link[aria-current="true"] {
+  color: var(--color-blueprint-blue);
+}
+
+/* CTA que aparece dentro do painel mobile (o do cabeçalho some em telas
+   muito estreitas). O seletor é composto para vencer o `display` de `.btn`,
+   declarado depois na cascata. */
+.site-nav .site-nav__cta {
+  display: none;
+}
+
+/* Abaixo de 64em a navegação vira painel colapsável controlado por JS. */
+@media (max-width: 63.999em) {
+  .site-nav .site-nav__cta {
+    display: flex;
+    margin-top: var(--space-md);
+  }
+
+  .site-nav {
+    position: absolute;
+    inset-inline: 0;
+    top: 100%;
+    background-color: var(--color-surface-white);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Sem JavaScript o menu permanece acessível, já aberto. */
+  html:not(.js) .site-nav[hidden] {
+    display: block;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-sm) var(--gutter) var(--space-md);
+  }
+
+  .site-nav__link {
+    display: block;
+    padding-block: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+@media (min-width: 64em) {
+  .site-nav[hidden] {
+    display: block; /* o atributo hidden só vale para o layout mobile */
+  }
+}
+
+/* Em telas médias o CTA do cabeçalho encolhe para caber em uma linha. */
+@media (max-width: 63.999em) {
+  .site-header__cta {
+    font-size: var(--text-body);
+    padding-inline: var(--space-md);
+    white-space: nowrap;
+  }
+}
+
+/* Em telas muito estreitas ele sai de cena; o usuário encontra o mesmo
+   botão dentro do menu e no hero. */
+@media (max-width: 29.999em) {
+  .site-header__cta {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  color: var(--color-technical-black);
+}
+
+.nav-toggle:hover {
+  background-color: var(--color-surface-high);
+}
+
+/* O botão só faz sentido com JS ativo. */
+html:not(.js) .nav-toggle {
+  display: none;
+}
+
+.nav-toggle .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Alterna entre os ícones de abrir e fechar conforme o estado. */
+.nav-toggle__close,
+.nav-toggle[aria-expanded="true"] .nav-toggle__open {
+  display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__close {
+  display: block;
+}
+
+@media (min-width: 64em) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* --- Footer --------------------------------------------------------------- */
+
+.site-footer {
+  background-color: var(--color-technical-black);
+  color: var(--color-on-dark);
+  border-top: 1px solid var(--color-border-dark);
+  padding-block: var(--space-2xl);
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48em) {
+  .site-footer__grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+.site-footer__brand {
+  font-family: var(--font-display);
+  font-size: var(--text-headline-sm);
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+}
+
+.site-footer__about {
+  max-width: 32rem;
+  margin-bottom: var(--space-lg);
+  color: var(--color-on-dark-variant);
+}
+
+.site-footer__contact {
+  display: grid;
+  gap: var(--space-xs);
+  color: var(--color-on-dark-variant);
+  font-style: normal;
+}
+
+.site-footer__contact a:hover {
+  color: var(--color-action-emerald);
+}
+
+.site-footer__heading {
+  margin-bottom: var(--space-md);
+}
+
+.site-footer__links {
+  display: grid;
+  gap: var(--space-sm);
+  color: var(--color-on-dark-variant);
+}
+
+.site-footer__links a {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.site-footer__links a:hover {
+  color: var(--color-action-emerald);
+}
+
+.site-footer__legal {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-dark);
+  text-align: center;
+  color: var(--color-on-dark-variant);
+}

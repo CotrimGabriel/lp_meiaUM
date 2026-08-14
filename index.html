@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Habite-se no DF | Meia Um Engenharia</title>
+  <meta name="description" content="Regularização de imóveis no Distrito Federal: Habite-se, averbação, alvará e aprovação de projetos. Avaliação gratuita e acompanhamento técnico do início ao fim.">
+  <meta name="theme-color" content="#004bc6">
+  <link rel="canonical" href="https://www.meiaum.com.br/">
+
+  <!-- Open Graph / redes sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Meia Um Engenharia">
+  <meta property="og:title" content="Habite-se no DF | Meia Um Engenharia">
+  <meta property="og:description" content="Cuidamos de toda a burocracia do Habite-se no DF, do diagnóstico à entrega, com acompanhamento técnico.">
+  <meta property="og:url" content="https://www.meiaum.com.br/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fontes: preconnect reduz o tempo de conexão; display=swap evita texto invisível.
+       As famílias precisam bater com --font-display / --font-body em tokens.css. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@700&amp;family=Poppins:wght@500;700;800&amp;display=swap">
+
+  <!-- Estilos: tokens → base → layout → componentes → página -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+
+  <script type="module" src="assets/js/pages/home.js"></script>
+
+  <!-- Sinaliza que o JS está ativo (usado pela animação de entrada). -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Meia Um Engenharia",
+    "description": "Regularização de imóveis, Habite-se, averbação e apoio técnico no Distrito Federal.",
+    "areaServed": "Distrito Federal, Brasil",
+    "telephone": "+5561999999999",
+    "email": "contato@meiaum.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brasília",
+      "addressRegion": "DF",
+      "addressCountry": "BR"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Sprite de ícones (SVG inline: sem requisição extra e sem fonte de ícones).
+       Para usar: <svg class="icon" aria-hidden="true"><use href="#i-nome" /></svg> -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-lock" viewBox="0 0 24 24">
+      <rect x="3.5" y="10.5" width="17" height="10.5" rx="2" />
+      <path d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5" />
+    </symbol>
+    <symbol id="i-house" viewBox="0 0 24 24">
+      <path d="M3 10.5 12 3l9 7.5" />
+      <path d="M5.5 9.5V21h13V9.5" />
+      <path d="M9.5 21v-6h5v6" />
+    </symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24">
+      <path d="M12 3 3 8h18L12 3Z" />
+      <path d="M6 11v7M10 11v7M14 11v7M18 11v7" />
+      <path d="M3.5 21h17" />
+    </symbol>
+    <symbol id="i-hammer" viewBox="0 0 24 24">
+      <path d="M14.5 2.5 21 9l-3 3-6.5-6.5 3-3Z" />
+      <path d="M11.5 8.5 3 17v4h4l8.5-8.5" />
+    </symbol>
+    <symbol id="i-building-off" viewBox="0 0 24 24">
+      <path d="M4.5 21V4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v17" />
+      <path d="M13.5 10H19a1 1 0 0 1 1 1v10" />
+      <path d="M7.5 7.5h1M11 7.5h1M7.5 11.5h1M11 11.5h1M7.5 15.5h1M11 15.5h1" />
+      <path d="M3 21.5 21.5 3" />
+    </symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24">
+      <path d="M12 3.5 2.5 20h19L12 3.5Z" />
+      <path d="M12 9.5v5" />
+      <path d="M12 17.6h.01" />
+    </symbol>
+    <symbol id="i-ruler" viewBox="0 0 24 24">
+      <path d="M12 3.5 3.5 20.5h17L12 3.5Z" />
+      <path d="M8 15h8" />
+    </symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24">
+      <path d="M3 18a9 9 0 1 1 18 0" />
+      <path d="m12 18 4.5-5.5" />
+      <circle cx="12" cy="18" r="1.3" />
+    </symbol>
+    <symbol id="i-dashboard" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="8" height="8" rx="1.5" />
+      <rect x="13" y="3" width="8" height="5" rx="1.5" />
+      <rect x="13" y="10" width="8" height="11" rx="1.5" />
+      <rect x="3" y="13" width="8" height="8" rx="1.5" />
+    </symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24">
+      <path d="M12 3 4.5 6v6c0 4.5 3.2 7.9 7.5 9 4.3-1.1 7.5-4.5 7.5-9V6L12 3Z" />
+      <path d="m9 12 2.2 2.2L15.5 10" />
+    </symbol>
+    <symbol id="i-clipboard-check" viewBox="0 0 24 24">
+      <rect x="4" y="4.5" width="16" height="17" rx="2" />
+      <path d="M9 2.5h6a1 1 0 0 1 1 1v3H8v-3a1 1 0 0 1 1-1Z" />
+      <path d="m8.5 13 2 2 4.5-5" />
+      <path d="M8.5 18h7" />
+    </symbol>
+    <symbol id="i-banknote" viewBox="0 0 24 24">
+      <rect x="2.5" y="5.5" width="15" height="10" rx="2" />
+      <circle cx="10" cy="10.5" r="2.2" />
+      <path d="M6.5 19.5h11a3 3 0 0 0 3-3V9" />
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24">
+      <path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5.3A8 8 0 1 1 21 11.5Z" />
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="m12 3.5 2.7 5.6 6.1.9-4.4 4.3 1 6.2-5.4-2.9-5.4 2.9 1-6.2-4.4-4.3 6.1-.9L12 3.5Z" />
+    </symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24">
+      <path d="m6 9.5 6 6 6-6" />
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18" />
+    </symbol>
+  </svg>
+
+  <!-- Cabeçalho fixo: marca, navegação e CTA principal. -->
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="#topo">MEIA UM ENGENHARIA</a>
+
+      <!-- `hidden` evita que o painel mobile pisque aberto ao carregar;
+           sem JS o CSS reexibe o menu (ver layout.css). -->
+      <nav class="site-nav" id="menu-principal" aria-label="Navegação principal" hidden data-nav>
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#casos">Casos frequentes</a></li>
+          <li><a class="site-nav__link" href="#avaliacao">Processo</a></li>
+          <li><a class="site-nav__link" href="#sobre">Sobre</a></li>
+          <li>
+            <a class="btn btn--primary site-nav__cta" href="https://wa.me/5561999999999" data-cta="default">
+              Falar com especialista
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary site-header__cta" href="https://wa.me/5561999999999" data-cta="default">
+          Falar com especialista
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-controls="menu-principal"
+          aria-expanded="false"
+          data-nav-toggle
+        >
+          <span class="visually-hidden">Abrir menu de navegação</span>
+          <svg class="icon nav-toggle__open" aria-hidden="true"><use href="#i-menu" /></svg>
+          <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- 1. Hero — promessa principal e CTA de topo. -->
+    <section class="hero" id="topo" aria-labelledby="hero-titulo">
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="display hero__title" id="hero-titulo">
+            Habite-se no <span class="text-accent">DF</span> com 100% de garantia.
+          </h1>
+          <p class="lead hero__text">
+           Não deixe a falta da Carta de Habite-se te atrapalhar. A Meia Um resolve do início ao fim, com acompanhamento técnico e garantia de aprovação.
+          </p>
+          <a class="btn btn--primary btn--lg btn--block" href="https://wa.me/5561999999999" data-cta="hero">
+            Falar com especialista
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Faixa de destaque — condição de pagamento, sobreposta ao hero. -->
+    <aside class="highlight-bar container" aria-label="Condições de pagamento">
+      <div class="highlight-bar__inner">
+        <p>
+          <span class="highlight-bar__eyebrow">Facilidade</span>
+          <strong class="headline-sm highlight-bar__value">Parcele em até 10x</strong>
+        </p>
+        <p class="headline-sm highlight-bar__value">Sem cartão de crédito!</p>
+      </div>
+    </aside>
+
+    <!-- 3. Diagnóstico — identificação de dor: casos frequentes. -->
+    <section class="section section--alt section--bordered diagnostic" id="casos" aria-labelledby="casos-titulo">
+      <div class="container">
+        <div class="section__header section__header--center">
+          <h2 class="headline section__title" id="casos-titulo">
+            Você está em alguma dessas situações?
+          </h2>
+          <p class="lead section__subtitle">
+            Se uma delas parece familiar, a regularização deixou de ser detalhe e
+            virou condição para proteger o valor do imóvel.
+          </p>
+        </div>
+
+        <ul class="grid grid--3">
+          <li class="card card--glass card--lift" data-reveal>
+            <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-lock" /></svg></span>
+            <h3 class="title card__title">Venda travada na hora de fechar</h3>
+            <p class="card__text">O comprador apareceu, mas a documentação não libera a negociação.</p>
+          </li>
+
+          <li class="card card--glass card--lift" data-reveal>
+            <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-house" /></svg></span>
+            <h3 class="title card__title">Imóvel pronto, documentação zero</h3>
+            <p class="card__text">Anos de construção, mas nenhum documento oficial.</p>
+          </li>
+
+          <li class="card card--glass card--lift" data-reveal>
+            <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-bank" /></svg></span>
+            <h3 class="title card__title">Banco negou o financiamento</h3>
+            <p class="card__text">Financiamento negado por pendência documental.</p>
+          </li>
+
+          <li class="card card--glass card--lift" data-reveal>
+            <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-hammer" /></svg></span>
+            <h3 class="title card__title">Fiz reforma ou ampliação, sem alvará</h3>
+            <p class="card__text">Reforma, puxadinho ou mudança de uso não foram atualizados.</p>
+          </li>
+
+          <li class="card card--glass card--lift" data-reveal>
+            <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-building-off" /></svg></span>
+            <h3 class="title card__title">Construí sem autorização</h3>
+            <p class="card__text">Construção sem aprovação do projeto.</p>
+          </li>
+
+          <li class="card card--glass card--lift" data-reveal>
+            <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-alert" /></svg></span>
+            <h3 class="title card__title">A fiscalização já bateu na porta</h3>
+            <p class="card__text">Notificação recebida e prazo no limite.</p>
+          </li>
+        </ul>
+
+        <div class="diagnostic__cta">
+          <p class="title diagnostic__cta-text">
+            Não encontrou sua situação? Fale com a gente e receba um diagnóstico gratuito.
+          </p>
+          <a class="btn btn--primary btn--block" href="https://wa.me/5561999999999" data-cta="diagnostico">
+            Falar com especialista
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Diferenciais — por que contratar a Meia Um. -->
+    <section class="section" aria-labelledby="diferenciais-titulo">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="headline section__title" id="diferenciais-titulo">
+            Por que a Meia Um é a melhor escolha?
+          </h2>
+        </div>
+
+        <ul class="grid grid--4">
+          <li class="card card--outline" data-reveal>
+            <svg class="icon icon--lg text-accent" aria-hidden="true"><use href="#i-ruler" /></svg>
+            <h3 class="title card__title">Expertise técnica</h3>
+            <p class="card__text">Equipe especializada em Habite-se no DF. Arquiteto especialista acompanhando cada detalhe.</p>
+          </li>
+
+          <li class="card card--outline" data-reveal>
+            <svg class="icon icon--lg text-accent" aria-hidden="true"><use href="#i-gauge" /></svg>
+            <h3 class="title card__title">Agilidade real</h3>
+            <p class="card__text">Processo organizado do início ao fim. Menos retrabalho, menos espera, mais resultado.</p>
+          </li>
+
+          <li class="card card--outline" data-reveal>
+            <svg class="icon icon--lg text-accent" aria-hidden="true"><use href="#i-dashboard" /></svg>
+            <h3 class="title card__title">Portal do Cliente</h3>
+            <p class="card__text">Acompanhamento em tempo real com atualizações e notificações de cada etapa.</p>
+          </li>
+
+          <li class="card card--outline" data-reveal>
+            <svg class="icon icon--lg text-accent" aria-hidden="true"><use href="#i-shield-check" /></svg>
+            <h3 class="title card__title">Risco Zero</h3>
+            <p class="card__text">Assumimos o risco junto com você. Processo transparente, sem surpresas ou custos ocultos.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. Avaliação gratuita — as três etapas da oferta de entrada. -->
+    <section class="section section--tight section--bordered" id="avaliacao" aria-labelledby="avaliacao-titulo">
+      <div class="container">
+        <div class="section__header section__header--center">
+          <h2 class="headline section__title" id="avaliacao-titulo">
+            Aqui você conta com uma avaliação gratuita do seu imóvel:
+          </h2>
+        </div>
+
+        <ol class="grid grid--3 steps">
+          <li class="step" data-reveal>
+            <span class="step__badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-ruler" /></svg></span>
+            <h3 class="title step__title">Análise do seu imóvel</h3>
+            <p class="step__text">Conferimos cuidadosamente as dimensões, características e situação atual.</p>
+          </li>
+
+          <li class="step" data-reveal>
+            <span class="step__badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-clipboard-check" /></svg></span>
+            <h3 class="title step__title">Levantamento do que será necessário</h3>
+            <p class="step__text">Você recebe uma lista clara com todos os documentos e etapas exigidos, sem surpresas.</p>
+          </li>
+
+          <li class="step" data-reveal>
+            <span class="step__badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-banknote" /></svg></span>
+            <h3 class="title step__title">Orçamento completo e transparente</h3>
+            <p class="step__text">Apresentamos um orçamento completo e transparente, com tudo bem explicado.</p>
+          </li>
+        </ol>
+
+        <div class="steps__action">
+          <a class="btn btn--primary btn--lg" href="https://wa.me/5561999999999" data-cta="avaliacao">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg>
+            Receber uma avaliação gratuita
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Prova social — depoimentos de clientes. -->
+    <section class="section section--alt section--bordered" aria-labelledby="depoimentos-titulo">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="headline section__title" id="depoimentos-titulo">Resultados que comprovam.</h2>
+          <p class="lead section__subtitle">Veja o que dizem quem já passou por esse processo.</p>
+        </div>
+
+        <ul class="grid grid--3">
+          <li class="card card--lift testimonial" data-reveal>
+            <p class="testimonial__rating" role="img" aria-label="Avaliação: 5 de 5 estrelas">
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+            </p>
+            <blockquote class="testimonial__quote">
+              “Excelente profissional. Me atendeu muito bem. Fui orientado e acompanhado
+              durante todo processo com toda transparência.”
+            </blockquote>
+            <p class="title testimonial__author">Lucas Silva</p>
+            <p class="label-mono testimonial__location">Brasília/DF</p>
+          </li>
+
+          <li class="card card--lift testimonial" data-reveal>
+            <p class="testimonial__rating" role="img" aria-label="Avaliação: 5 de 5 estrelas">
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+            </p>
+            <blockquote class="testimonial__quote">
+              “Tirei meu habite-se, apesar de vários empecilhos que o GDF colocou.
+              A experiência técnica agregou muito no processo.”
+            </blockquote>
+            <p class="title testimonial__author">Marcelo Paiva</p>
+            <p class="label-mono testimonial__location">Taguatinga/DF</p>
+          </li>
+
+          <li class="card card--lift testimonial" data-reveal>
+            <p class="testimonial__rating" role="img" aria-label="Avaliação: 5 de 5 estrelas">
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+              <svg class="icon icon--filled" aria-hidden="true"><use href="#i-star" /></svg>
+            </p>
+            <blockquote class="testimonial__quote">
+              “Buscava um profissional responsável para obter minha carta. Tudo contratado
+              foi realizado com honestidade. Satisfeito.”
+            </blockquote>
+            <p class="title testimonial__author">Luiz Gonzaga</p>
+            <p class="label-mono testimonial__location">Águas Claras/DF</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. Sobre — autoridade da empresa e números. -->
+    <section class="section" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container about">
+        <img
+          class="about__image"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjWI4_-Ga_8_ZDLrv8xV2nfw-K7z_NAuVqY4Q1HlW7OIs29PRKk7b6kISyPdCSZV8ztyV0T3gAn7mSEky1z0SiiRWimeUEwVLhHdT2Hlbxq51HYSnNUeoIpxr5ODCDVNs1lXF4OR1nLLpOPOsoYR2dVMw0LBUnEBhvUUVGLkUuyLJccqt46GVgRUSBDlsv2eby51U5wdW439GeqwHhdTXYspcZ7iBGMdA0z3bpzWO0osGR1dcRkg5W"
+          alt="Arquiteto da Meia Um Engenharia em um escritório moderno, com pranchas técnicas ao fundo."
+          width="800"
+          height="500"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div>
+          <h2 class="headline about__title" id="sobre-titulo">Quem é a Meia Um Engenharia</h2>
+          <p class="about__text">
+            Somos um escritório de engenharia especializado na regularização de imóveis
+            no Distrito Federal — Habite-se, averbação, aprovação de projetos e
+            construções irregulares.
+          </p>
+          <p class="about__text">
+            Com mais de 11 anos de experiência, cuidamos de tudo, do diagnóstico até a
+            entrega, e mantemos você informado em cada etapa. Regularizar protege o valor
+            do seu imóvel, elimina risco jurídico e abre caminho para venda ou financiamento.
+          </p>
+
+          <dl class="about__stats">
+            <div>
+              <dt class="headline-sm about__stat-value">1.800+</dt>
+              <dd class="about__stat-label">Projetos entregues</dd>
+            </div>
+            <div>
+              <dt class="headline-sm about__stat-value">15+</dt>
+              <dd class="about__stat-label">Anos de experiência</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ — quebra de objeções finais. -->
+    <section class="section section--alt section--bordered" id="faq" aria-labelledby="faq-titulo">
+      <div class="container container--narrow">
+        <div class="section__header section__header--center">
+          <h2 class="headline section__title" id="faq-titulo">Perguntas frequentes</h2>
+        </div>
+
+        <div class="accordion" data-accordion>
+          <details class="accordion__item">
+            <summary class="title accordion__trigger">
+              Quanto custa tirar o habite-se?
+              <svg class="icon accordion__icon" aria-hidden="true"><use href="#i-chevron-down" /></svg>
+            </summary>
+            <p class="accordion__panel">
+              O custo varia conforme o porte da obra e os documentos necessários.
+              Peça agora sua avaliação gratuita e receba um orçamento detalhado.
+            </p>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="title accordion__trigger">
+              Meu imóvel realmente precisa da carta de habite-se?
+              <svg class="icon accordion__icon" aria-hidden="true"><use href="#i-chevron-down" /></svg>
+            </summary>
+            <p class="accordion__panel">
+              Sim. Sem o habite-se, o imóvel continua irregular. Isso pode impedir a venda
+              financiada, a hipoteca e até gerar multas ou problemas legais.
+            </p>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="title accordion__trigger">
+              O processo demora muito?
+              <svg class="icon accordion__icon" aria-hidden="true"><use href="#i-chevron-down" /></svg>
+            </summary>
+            <p class="accordion__panel">
+              Cuidamos de cada detalhe para que você tenha seu Habite-se rapidamente,
+              com um processo ágil e acompanhado de perto.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé: contato e mapa de serviços. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <p class="site-footer__brand">MEIA UM ENGENHARIA</p>
+          <p class="site-footer__about">
+            Regularização de imóveis, Habite-se, averbação e apoio técnico para
+            proprietários residenciais no Distrito Federal.
+          </p>
+          <address class="site-footer__contact">
+            <span>WhatsApp: <a href="https://wa.me/5561999999999" data-cta="default">(61) 99999-9999</a></span>
+            <span>E-mail: <a href="mailto:contato@meiaum.com.br">contato@meiaum.com.br</a></span>
+            <span>Brasília/DF</span>
+          </address>
+        </div>
+
+        <nav aria-labelledby="footer-servicos">
+          <h2 class="title site-footer__heading" id="footer-servicos">Serviços</h2>
+          <ul class="site-footer__links">
+            <li><a href="#casos">Alvará</a></li>
+            <li><a href="#casos">Habite-se</a></li>
+            <li><a href="#casos">Projetos</a></li>
+            <li><a href="#casos">Apoio à Produção</a></li>
+            <li><a href="#casos">PBQP-H</a></li>
+            <li><a href="#casos">Projetos 3D</a></li>
+            <li><a href="#casos">Georreferenciamento</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-engenharia">
+          <h2 class="title site-footer__heading" id="footer-engenharia">Engenharia</h2>
+          <ul class="site-footer__links">
+            <li><a href="#casos">Projetos de Engenharia</a></li>
+            <li><a href="#casos">Projetos de Prevenção</a></li>
+            <li><a href="#casos">Combate a Incêndio</a></li>
+            <li><a href="#casos">Projetos Arquitetônicos</a></li>
+            <li><a href="#casos">Construção e Reforma</a></li>
+            <li><a href="#casos">Administração de Obras</a></li>
+            <li><a href="#casos">Manutenção Predial</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <p class="site-footer__legal">
+        © <span data-current-year>2026</span> Meia Um Engenharia. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

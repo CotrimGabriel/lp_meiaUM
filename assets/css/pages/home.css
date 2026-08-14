@@ -1,0 +1,230 @@
+/* ==========================================================================
+   Página: Home (landing page Habite-se)
+   Estilos exclusivos desta página. Nada aqui é reutilizado em outras rotas.
+   ========================================================================== */
+
+/* --- Hero ----------------------------------------------------------------- */
+
+.hero {
+  /* Trocar a imagem de fundo do topo aqui. */
+  --hero-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwfKjW6DFtTJB-D0FdpJ1pmCHEnW0u7A297s0nLrGtogaOURny0PgAijrt0vEugiCZWfmopTWJGQ-7-38vf230PhXOSCZFGvECi2XiIXNt1-vQ42Tvj3VthadAVh7M9T7e6yq22fpHEp4BSheqqcW_aWfoyKhsYkLJRf1oa26MitxPhHEipE_ZuQ0Eg7Tq8vHnM1N3kJiSu8C_a86D5mPrmtEPoEWKDt71H4OnpG3Cok33vRHACJM93dpbiN1lcJCxOg");
+
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-technical-black);
+  background-image: var(--hero-image);
+  background-size: cover;
+  background-position: center;
+  padding-block: var(--space-2xl);
+}
+
+/* Overlay que garante contraste AAA do texto sobre a foto. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgb(8 8 8 / 70%);
+}
+
+.hero__content {
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+  color: var(--color-on-dark);
+}
+
+.hero__title {
+  margin-bottom: var(--space-md);
+}
+
+/* Sobre a foto escurecida o azul da marca perderia legibilidade. */
+.hero__title .text-accent {
+  color: var(--color-accent-on-dark);
+}
+
+.hero__text {
+  margin-bottom: var(--space-lg);
+  color: var(--color-on-dark);
+}
+
+/* --- Faixa de destaque (parcelamento) ------------------------------------- */
+
+.highlight-bar {
+  position: relative;
+  z-index: var(--z-raised);
+  margin-block: calc(var(--space-xl) * -1);
+}
+
+.highlight-bar__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: var(--space-lg);
+  background-color: #dad7d7;
+  border: 1px solid rgb(218 218 218 / 20%);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+}
+
+@media (min-width: 48em) {
+  .highlight-bar__inner {
+    flex-direction: row;
+    text-align: left;
+    padding: var(--space-lg) var(--space-xl);
+  }
+}
+
+.highlight-bar__eyebrow {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--color-success);
+  font-weight: 500;
+  font-size: var(--text-title);
+}
+
+.highlight-bar__value {
+  color: var(--color-technical-black);
+  font-weight: 600;
+}
+
+/* --- Diagnóstico (casos frequentes) --------------------------------------- */
+
+/* Compensa a faixa sobreposta logo acima da seção. */
+.diagnostic {
+  padding-top: calc(var(--space-2xl) + var(--space-xl));
+}
+
+.diagnostic__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  background-color: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+@media (min-width: 48em) {
+  .diagnostic__cta {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.diagnostic__cta-text {
+  color: var(--color-technical-black);
+}
+
+/* --- Etapas da avaliação gratuita ----------------------------------------- */
+
+.steps {
+  margin-bottom: var(--space-lg);
+  gap: var(--space-xl);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step__badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: var(--space-md);
+  background-color: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-blueprint-blue);
+}
+
+/* Ponta triangular apontando para o texto da etapa. */
+.step__badge::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--color-surface-white);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.step__title {
+  margin-bottom: var(--space-sm);
+  color: var(--color-technical-black);
+}
+
+.step__text {
+  color: var(--color-on-surface-variant);
+}
+
+.steps__action {
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Sobre ---------------------------------------------------------------- */
+
+.about {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+@media (min-width: 48em) {
+  .about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about__image {
+  width: 100%;
+  height: min(31.25rem, 70vh);
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.about__title {
+  margin-bottom: var(--space-md);
+  color: var(--color-technical-black);
+}
+
+.about__text {
+  margin-bottom: var(--space-md);
+  color: var(--color-on-surface-variant);
+}
+
+.about__stats {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.about__stat-value {
+  color: var(--color-blueprint-blue);
+}
+
+.about__stat-label {
+  color: var(--color-on-surface-variant);
+}
