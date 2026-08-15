@@ -139,7 +139,14 @@
   <!-- Cabeçalho fixo: marca, navegação e CTA principal. -->
   <header class="site-header" data-header>
     <div class="container site-header__inner">
-      <a class="site-header__brand" href="#topo">MEIA UM ENGENHARIA</a>
+      <a class="site-header__brand" href="#topo">
+        <img
+          src="assets/img/logo-meia-um.png"
+          alt="Meia Um Engenharia"
+          width="233"
+          height="144"
+        >
+      </a>
 
       <!-- `hidden` evita que o painel mobile pisque aberto ao carregar;
            sem JS o CSS reexibe o menu (ver layout.css). -->
@@ -266,6 +273,45 @@
         </div>
       </div>
     </section>
+    <!-- 7. Sobre — autoridade da empresa e números. -->
+    <section class="section" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container about">
+        <img
+          class="about__image"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjWI4_-Ga_8_ZDLrv8xV2nfw-K7z_NAuVqY4Q1HlW7OIs29PRKk7b6kISyPdCSZV8ztyV0T3gAn7mSEky1z0SiiRWimeUEwVLhHdT2Hlbxq51HYSnNUeoIpxr5ODCDVNs1lXF4OR1nLLpOPOsoYR2dVMw0LBUnEBhvUUVGLkUuyLJccqt46GVgRUSBDlsv2eby51U5wdW439GeqwHhdTXYspcZ7iBGMdA0z3bpzWO0osGR1dcRkg5W"
+          alt="Arquiteto da Meia Um Engenharia em um escritório moderno, com pranchas técnicas ao fundo."
+          width="800"
+          height="500"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div>
+          <h2 class="headline about__title" id="sobre-titulo">Quem é a Meia Um Engenharia</h2>
+          <p class="about__text">
+            Somos um escritório de engenharia especializado na regularização de imóveis
+            no Distrito Federal — Habite-se, averbação, aprovação de projetos e
+            construções irregulares.
+          </p>
+          <p class="about__text">
+            Com mais de 11 anos de experiência, cuidamos de tudo, do diagnóstico até a
+            entrega, e mantemos você informado em cada etapa. Regularizar protege o valor
+            do seu imóvel, elimina risco jurídico e abre caminho para venda ou financiamento.
+          </p>
+
+          <dl class="about__stats">
+            <div>
+              <dt class="headline-sm about__stat-value">1.800+</dt>
+              <dd class="about__stat-label">Projetos entregues</dd>
+            </div>
+            <div>
+              <dt class="headline-sm about__stat-value">15+</dt>
+              <dd class="about__stat-label">Anos de experiência</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
 
     <!-- 4. Diferenciais — por que contratar a Meia Um. -->
     <section class="section" aria-labelledby="diferenciais-titulo">
@@ -303,44 +349,9 @@
         </ul>
       </div>
     </section>
+    
 
-    <!-- 5. Avaliação gratuita — as três etapas da oferta de entrada. -->
-    <section class="section section--tight section--bordered" id="avaliacao" aria-labelledby="avaliacao-titulo">
-      <div class="container">
-        <div class="section__header section__header--center">
-          <h2 class="headline section__title" id="avaliacao-titulo">
-            Aqui você conta com uma avaliação gratuita do seu imóvel:
-          </h2>
-        </div>
-
-        <ol class="grid grid--3 steps">
-          <li class="step" data-reveal>
-            <span class="step__badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-ruler" /></svg></span>
-            <h3 class="title step__title">Análise do seu imóvel</h3>
-            <p class="step__text">Conferimos cuidadosamente as dimensões, características e situação atual.</p>
-          </li>
-
-          <li class="step" data-reveal>
-            <span class="step__badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-clipboard-check" /></svg></span>
-            <h3 class="title step__title">Levantamento do que será necessário</h3>
-            <p class="step__text">Você recebe uma lista clara com todos os documentos e etapas exigidos, sem surpresas.</p>
-          </li>
-
-          <li class="step" data-reveal>
-            <span class="step__badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-banknote" /></svg></span>
-            <h3 class="title step__title">Orçamento completo e transparente</h3>
-            <p class="step__text">Apresentamos um orçamento completo e transparente, com tudo bem explicado.</p>
-          </li>
-        </ol>
-
-        <div class="steps__action">
-          <a class="btn btn--primary btn--lg" href="https://wa.me/5561999999999" data-cta="avaliacao">
-            <svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg>
-            Receber uma avaliação gratuita
-          </a>
-        </div>
-      </div>
-    </section>
+   
 
     <!-- 6. Prova social — depoimentos de clientes. -->
     <section class="section section--alt section--bordered" aria-labelledby="depoimentos-titulo">
@@ -402,42 +413,42 @@
       </div>
     </section>
 
-    <!-- 7. Sobre — autoridade da empresa e números. -->
-    <section class="section" id="sobre" aria-labelledby="sobre-titulo">
-      <div class="container about">
-        <img
-          class="about__image"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjWI4_-Ga_8_ZDLrv8xV2nfw-K7z_NAuVqY4Q1HlW7OIs29PRKk7b6kISyPdCSZV8ztyV0T3gAn7mSEky1z0SiiRWimeUEwVLhHdT2Hlbxq51HYSnNUeoIpxr5ODCDVNs1lXF4OR1nLLpOPOsoYR2dVMw0LBUnEBhvUUVGLkUuyLJccqt46GVgRUSBDlsv2eby51U5wdW439GeqwHhdTXYspcZ7iBGMdA0z3bpzWO0osGR1dcRkg5W"
-          alt="Arquiteto da Meia Um Engenharia em um escritório moderno, com pranchas técnicas ao fundo."
-          width="800"
-          height="500"
-          loading="lazy"
-          decoding="async"
-        >
+    
 
-        <div>
-          <h2 class="headline about__title" id="sobre-titulo">Quem é a Meia Um Engenharia</h2>
-          <p class="about__text">
-            Somos um escritório de engenharia especializado na regularização de imóveis
-            no Distrito Federal — Habite-se, averbação, aprovação de projetos e
-            construções irregulares.
-          </p>
-          <p class="about__text">
-            Com mais de 11 anos de experiência, cuidamos de tudo, do diagnóstico até a
-            entrega, e mantemos você informado em cada etapa. Regularizar protege o valor
-            do seu imóvel, elimina risco jurídico e abre caminho para venda ou financiamento.
-          </p>
+     <!-- 5. Avaliação gratuita — as três etapas da oferta de entrada. -->
+    <section class="section section--tight section--bordered" id="avaliacao" aria-labelledby="avaliacao-titulo">
+      <div class="container">
+        <div class="section__header section__header--center">
+          <h2 class="headline section__title" id="avaliacao-titulo">
+            Aqui você conta com uma avaliação gratuita do seu imóvel:
+          </h2>
+        </div>
 
-          <dl class="about__stats">
-            <div>
-              <dt class="headline-sm about__stat-value">1.800+</dt>
-              <dd class="about__stat-label">Projetos entregues</dd>
-            </div>
-            <div>
-              <dt class="headline-sm about__stat-value">15+</dt>
-              <dd class="about__stat-label">Anos de experiência</dd>
-            </div>
-          </dl>
+        <ol class="grid grid--3 steps">
+          <li class="step" data-reveal>
+            <span class="step__badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-ruler" /></svg></span>
+            <h3 class="title step__title">Análise do seu imóvel</h3>
+            <p class="step__text">Conferimos cuidadosamente as dimensões, características e situação atual.</p>
+          </li>
+
+          <li class="step" data-reveal>
+            <span class="step__badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-clipboard-check" /></svg></span>
+            <h3 class="title step__title">Levantamento do que será necessário</h3>
+            <p class="step__text">Você recebe uma lista clara com todos os documentos e etapas exigidos, sem surpresas.</p>
+          </li>
+
+          <li class="step" data-reveal>
+            <span class="step__badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-banknote" /></svg></span>
+            <h3 class="title step__title">Orçamento completo e transparente</h3>
+            <p class="step__text">Apresentamos um orçamento completo e transparente, com tudo bem explicado.</p>
+          </li>
+        </ol>
+
+        <div class="steps__action">
+          <a class="btn btn--primary btn--lg" href="https://wa.me/5561999999999" data-cta="avaliacao">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat" /></svg>
+            Receber uma avaliação gratuita
+          </a>
         </div>
       </div>
     </section>

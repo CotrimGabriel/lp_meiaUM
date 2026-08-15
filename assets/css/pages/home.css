@@ -6,8 +6,9 @@
 /* --- Hero ----------------------------------------------------------------- */
 
 .hero {
-  /* Trocar a imagem de fundo do topo aqui. */
-  --hero-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwfKjW6DFtTJB-D0FdpJ1pmCHEnW0u7A297s0nLrGtogaOURny0PgAijrt0vEugiCZWfmopTWJGQ-7-38vf230PhXOSCZFGvECi2XiIXNt1-vQ42Tvj3VthadAVh7M9T7e6yq22fpHEp4BSheqqcW_aWfoyKhsYkLJRf1oa26MitxPhHEipE_ZuQ0Eg7Tq8vHnM1N3kJiSu8C_a86D5mPrmtEPoEWKDt71H4OnpG3Cok33vRHACJM93dpbiN1lcJCxOg");
+  /* Trocar a imagem de fundo do topo aqui. Arte vertical no mobile e
+     horizontal no desktop (troca em .hero mais abaixo, a partir de 48em). */
+  --hero-image: url("../../img/hero-mobile.webp");
 
   position: relative;
   isolation: isolate;
@@ -18,13 +19,22 @@
   padding-block: var(--space-2xl);
 }
 
-/* Overlay que garante contraste AAA do texto sobre a foto. */
+@media (min-width: 48em) {
+  .hero {
+    --hero-image: url("../../img/hero-desktop.webp");
+  }
+}
+
+/* Overlay que garante contraste AAA do texto sobre a foto. As duas artes já
+   vêm escurecidas, então 40% basta: no ponto mais claro de cada uma o texto
+   branco fica em 7,5:1 (desktop) e 7,8:1 (mobile). Subir esse valor apaga a
+   foto; descer abaixo de 40% derruba o contraste para AA. */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-color: rgb(8 8 8 / 70%);
+  background-color: rgb(8 8 8 / 40%);
 }
 
 .hero__content {

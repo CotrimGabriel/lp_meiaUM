@@ -105,17 +105,22 @@
   padding-block: var(--space-sm);
 }
 
+/* A marca é a logo em imagem; o nome da empresa vive no `alt`. */
 .site-header__brand {
-  font-family: var(--font-display);
-  font-size: 1.125rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  color: var(--color-technical-black);
+  display: flex;
+  flex: none;
+}
+
+/* A altura manda (o header tem 4.5rem); a largura acompanha a proporção
+   declarada nos atributos width/height do <img>, evitando reflow. */
+.site-header__brand img {
+  width: auto;
+  height: 2.5rem;
 }
 
 @media (min-width: 48em) {
-  .site-header__brand {
-    font-size: var(--text-headline-sm);
+  .site-header__brand img {
+    height: 3rem;
   }
 }
 
@@ -205,9 +210,10 @@
 }
 
 /* Em telas muito estreitas ele sai de cena; o usuário encontra o mesmo
-   botão dentro do menu e no hero. */
+   botão dentro do menu e no hero. O seletor é composto para vencer o
+   `display` de `.btn`, declarado depois na cascata. */
 @media (max-width: 29.999em) {
-  .site-header__cta {
+  .site-header .site-header__cta {
     display: none;
   }
 }
